@@ -1,5 +1,16 @@
 import './App.css';
 import React from 'react';
+import searchIcon from './assets/search.png';
+import calendarIcon from './assets/calendar.png';
+import timeIcon from './assets/time.png';
+import weatherIcon from './assets/weather.png';
+import floodIcon from './assets/flood.png';
+import windIcon from './assets/wind.png';
+import hotIcon from './assets/hot.png';
+import eyeIcon from './assets/eye.png';
+import wind1Icon from './assets/wind-1.png';
+import sunriseIcon from './assets/sunrise.png';
+import moonIcon from './assets/moon.png';
 function App() {
   //change the date formate
   function dateFormate(timeStamp){
@@ -161,95 +172,101 @@ const DataFetch=async()=>{
     <div className="body">
       <div className="searchBar">
         <div className="searchBarParentDiv">
-            <input type="text" className="inputfield" placeholder="Search City"/>
-            <img src="./assets/search.png" alt="" width="35px" className="searchIcon" onClick={DataFetch}/>
+          <input type="text" className="inputfield" placeholder="Search City"/>
+          {/* 2. Use the imported variables in the src attribute */}
+          <img src={searchIcon} alt="Search" width="35px" className="searchIcon" onClick={DataFetch}/>
+          {/* This path might be okay if the image is in the public folder, but importing is better: */}
+          {/* <img src="../public/assets/background.jpg"/> */}
+          {/* If you can't import it, and it's in the public folder, use the root path: */}
         </div>
       </div>
       <div className="maincontainer">
         <div className="leftdiv ">
           <div className="currentTempDiv leftChild p-3 d-flex flex-column gap-2">
+            {/* ... (rest of currentTempDiv) ... */}
             <h5 className="m-0" id="cityName">City Name</h5>
             <h5 className="temp m-0"><span id="temperature">0</span>&deg;C</h5>
             <h6 className="skyDescription m-0" id="description">Sky Description</h6>
             <hr/>
             <div className="date d-flex align-item-center gap-2">
-              <img src="./assets/calendar.png" alt="" width={20} height={20}/>
+              <img src={calendarIcon} alt="Calendar" width={20} height={20}/>
               <h6 className="dateText m-0">Date : <span id="date"></span></h6>
             </div>
             <div className="time d-flex align-item-center gap-2">
-              <img src="./assets/time.png" alt="" width={20} height={20}/>
-              <h6 className="timeText m-0">Time :  <span id="time"></span></h6>
+              <img src={timeIcon} alt="Time" width={20} height={20}/>
+              <h6 className="timeText m-0">Time : <span id="time"></span></h6>
             </div>
           </div>
           <div className="nextFiveDays leftChild p-2 mt-2 d-flex flex-column">
               <h6 className="m-0" id="comingFiveDaysTitle">Coming 5 Days</h6>
               <div id="forecastContainer" className="d-flex flex-row gap-2 mt-2">
                 <div className="cloud-child">
-                  <img src="./assets/weather.png" alt="" width={30}/>
+                  <img src={weatherIcon} alt="Weather" width={30}/>
                 </div>
                 <h6><span id="day1">0</span>&deg;C</h6>
                 <h6>Sunday</h6>
                 <h6 id="day1Date">2025-08-03</h6>
               </div>
-              <div id="forecastContainer" className="d-flex flex-row gap-2 mt-2">
-                <div className="cloud-child">
-                  <img src="./assets/weather.png" alt="" width={30}/>
-                </div>
-                <h6><span id="day2">0</span>&deg;C</h6>
-                <h6>Sunday</h6>
-                <h6 id="day2Date">2025-08-03</h6>
-              </div>
-              <div id="forecastContainer" className="d-flex flex-row gap-2 mt-2">
-                <div className="cloud-child">
-                  <img src="./assets/weather.png" alt="" width={30}/>
-                </div>
-                <h6><span id="day3">0</span>&deg;C</h6>
-                <h6>Sunday</h6>
-                <h6 id="day3Date">2025-08-03</h6>
-              </div>
-              <div id="forecastContainer" className="d-flex flex-row gap-2 mt-2">
-                <div className="cloud-child">
-                  <img src="./assets/weather.png" alt="" width={30}/>
-                </div>
-                <h6><span id="day4">0</span>&deg;C</h6>
-                <h6>Sunday</h6>
-                <h6 id="day4Date">2025-08-03</h6>
-              </div>
-              <div id="forecastContainer" className="d-flex flex-row gap-2 mt-2">
-                <div className="cloud-child">
-                  <img src="./assets/weather.png" alt="" width={30}/>
-                </div>
-                <h6><span id="day5"> 0</span>&deg;C</h6>
-                <h6>Sunday</h6>
-                <h6 id="day5Date">2025-08-03</h6>
-              </div>
+              {/* ... (Repeat for day 2, 3, 4, 5 using {weatherIcon}) ... */}
+               <div id="forecastContainer" className="d-flex flex-row gap-2 mt-2">
+                 <div className="cloud-child">
+                   <img src={weatherIcon} alt="Weather" width={30}/>
+                 </div>
+                 <h6><span id="day2">0</span>&deg;C</h6>
+                 <h6>Sunday</h6>
+                 <h6 id="day2Date">2025-08-03</h6>
+               </div>
+               <div id="forecastContainer" className="d-flex flex-row gap-2 mt-2">
+                 <div className="cloud-child">
+                   <img src={weatherIcon} alt="Weather" width={30}/>
+                 </div>
+                 <h6><span id="day3">0</span>&deg;C</h6>
+                 <h6>Sunday</h6>
+                 <h6 id="day3Date">2025-08-03</h6>
+               </div>
+               <div id="forecastContainer" className="d-flex flex-row gap-2 mt-2">
+                 <div className="cloud-child">
+                   <img src={weatherIcon} alt="Weather" width={30}/>
+                 </div>
+                 <h6><span id="day4">0</span>&deg;C</h6>
+                 <h6>Sunday</h6>
+                 <h6 id="day4Date">2025-08-03</h6>
+               </div>
+               <div id="forecastContainer" className="d-flex flex-row gap-2 mt-2">
+                 <div className="cloud-child">
+                   <img src={weatherIcon} alt="Weather" width={30}/>
+                 </div>
+                 <h6><span id="day5"> 0</span>&deg;C</h6>
+                 <h6>Sunday</h6>
+                 <h6 id="day5Date">2025-08-03</h6>
+               </div>
           </div>
         </div>
         <div className="rightdiv d-flex flex-column justify-content-center align-items-center gap-3">
             <div className="rightrow rowone d-flex flex-row justify-content-between align-items-center">
               <div className="rowonechild humidity d-flex flex-row justify-content-center align-items-center gap-2">
-                <img src="./assets/flood.png"  width={40} alt="" />
+                <img src={floodIcon} width={40} alt="Humidity Icon" />
                 <div className="humiditychild">
                   <h6 className="text-center m-0 mt-2" id="humidity">Metric Name</h6>
                   <h6 className="text-center m-0 mt-1" id="humidityValue">Metric Value</h6>
                 </div>
               </div>
               <div className="rowonechild pressure d-flex flex-row justify-content-center align-items-center gap-2">
-                <img src="./assets/wind.png"  width={40} alt="" />
+                <img src={windIcon} width={40} alt="Pressure Icon" />
                 <div className="pressurechild">
                   <h6 className="text-center m-0 mt-2" id="pressure">Metric Name</h6>
                   <h6 className="text-center m-0 mt-1" id="pressureValue">Mteric Value</h6>
                 </div>
               </div>
               <div className="rowonechild feellike d-flex flex-row justify-content-center align-items-center gap-2">
-                <img src="./assets/hot.png"  width={40} alt="" />
+                <img src={hotIcon} width={40} alt="Feels Like Icon" />
                 <div className="feellikechild">
                   <h6 className="text-center m-0 mt-2" id="feellike">Metric Name</h6>
                   <h6 className="text-center m-0 mt-1" id="feellikeValue">Mteric Value</h6>
                 </div>
               </div>
               <div className="rowonechild visibility d-flex flex-row justify-content-center align-items-center gap-2">
-                <img src="./assets/eye.png"  width={40} alt="" />
+                <img src={eyeIcon} width={40} alt="Visibility Icon" />
                 <div className="visibilitychild">
                   <h6 className="text-center m-0 mt-2" id="visibility">Metric Name</h6>
                   <h6 className="text-center m-0 mt-1" id="visibilityValue">Mteric Value</h6>
@@ -260,7 +277,8 @@ const DataFetch=async()=>{
               <div className="rowtwochild airquality d-flex flex-column justify-content-start gap-1">
                   <h5 className="m-1 p-1">Air Quality Index (AQI)</h5>
                   <div className="Air-child mt-2 d-flex justify-content-around align-items-center">
-                    <img src="./assets/wind-1.png" alt="" width={40} />
+                    <img src={wind1Icon} alt="AQI Icon" width={40} />
+                    {/* ... (rest of AQI readings) ... */}
                     <div className="readings g-1">
                       <h6 className="m-0" id="co">AQI Metric</h6>
                       <h6 className="m-0" id="coValue">0</h6>
@@ -283,14 +301,14 @@ const DataFetch=async()=>{
                 <h5 className="m-2 p-2">Sunrise & Sunset</h5>
                 <div className="sub-sunrise d-flex justify-content-around align-items-center">
                   <div className="sunrise-sunrise d-flex justify-content-center align-items-center gap-2">
-                    <img src="./assets/sunrise.png" alt="" width={60} />
+                    <img src={sunriseIcon} alt="Sunrise Icon" width={60} />
                     <div className="sun-timing d-flex flex-column gap-1">
                       <h6 className="m-0">Sunrise</h6>
                       <h6 className="m-0"><span id="sunriseTime">06:00:00</span><span><br/>AM</span></h6>
                     </div>
                   </div>
                   <div className="sunrise-sunrise d-flex justify-content-center align-items-center gap-2">
-                    <img src="./assets/moon.png" alt="" width={60} />
+                    <img src={moonIcon} alt="Sunset Icon" width={60} />
                     <div className="sun-timing">
                       <h6 className="m-0">Sunset</h6>
                       <h6 className="m-0"><span id="sunsetTime">06:00:00 </span><span><br/>PM</span></h6>
@@ -301,43 +319,44 @@ const DataFetch=async()=>{
             </div>
             <div className="rightrow rowthree d-flex flex-column justify-content-between align-items-center">
               <h5 className="m-0 align-self-start p-1">Today</h5>
-                <div className="rowchildParent  d-flex flex-row justify-content-evenly align-items-center gap-3">
+                <div className="rowchildParent  d-flex flex-row justify-content-evenly align-items-center gap-3">
                   <div className="rowthreechild child1 d-flex flex-column justify-content-center align-items-center">
                     <h6>06:00 PM</h6>
-                    <img src="../public/assets/cloudy.png" alt="cloudy" width={40} />
+                    {/* Public assets must start with a forward slash / */}
+                    <img src={weatherIcon} alt="cloudy" width={40} />
                     <h6 className="degrees">34.5&deg;C</h6>
                   </div>
                   <div className="rowthreechild child2">
                     <h6>06:00 PM</h6>
-                    <img src="../public/assets/cloudy.png" alt="cloudy" width={40} />
-                    <h6 className="degrees">34.5&deg;C</h6>                    
+                    <img src={weatherIcon} alt="cloudy" width={40} />
+                    <h6 className="degrees">34.5&deg;C</h6>
                   </div>
                   <div className="rowthreechild child3">
                     <h6>06:00 PM</h6>
-                    <img src="../public/assets/cloudy.png" alt="cloudy" width={40} />
+                    <img src={weatherIcon} alt="cloudy" width={40} />
                     <h6 className="degrees">34.5&deg;C</h6>
                   </div>
                   <div className="rowthreechild child4">
                     <h6>06:00 PM</h6>
-                    <img src="../public/assets/cloudy.png" alt="cloudy" width={40} />
+                    <img src={weatherIcon} alt="cloudy" width={40} />
                     <h6 className="degrees">34.5&deg;C</h6>
                   </div>
                   <div className="rowthreechild child5">
                     <h6>06:00 PM</h6>
-                    <img src="../public/assets/cloudy.png" alt="cloudy" width={40} />
+                    <img src={weatherIcon} alt="cloudy" width={40} />
                     <h6 className="degrees">34.5&deg;C</h6>
                   </div>
                   <div className="rowthreechild child6">
                     <h6>06:00 PM</h6>
-                    <img src="../public/assets/cloudy.png" alt="cloudy" width={40} />
-                    <h6 className="degrees">34.5&deg;C</h6>                    
+                    <img src={weatherIcon} alt="cloudy" width={40} />
+                    <h6 className="degrees">34.5&deg;C</h6>
                   </div>
                 </div>
-             </div>
+            </div>
         </div>
       </div>
     </div>
   )
 }
 
-export default App
+export default App;
