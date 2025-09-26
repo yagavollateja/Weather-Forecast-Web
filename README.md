@@ -1,16 +1,22 @@
-# React + Vite
+🌤️ Weather Forecast Web App using React.js
+I created a responsive weather website using React.js that allows users to check real-time weather conditions for any city across the globe. The app fetches data from a free weather API (OpenWeatherMap) and displays details like temperature, humidity, wind speed, and weather conditions with an intuitive and user-friendly interface.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+🔹 Features:
 
-Currently, two official plugins are available:
+Search functionality for any city worldwide 🌍
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Real-time weather updates using API integration ⛅
 
-## React Compiler
+Clean and responsive UI with React components 🎨
 
-The React Compiler is not enabled on this template. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Error handling for invalid city inputs ❌
 
-## Expanding the ESLint configuration
+Dynamic background/images based on weather condition 🌈
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+🔹 Tech Stack:
+
+Frontend: React.js, CSS (or Tailwind/Bootstrap)
+
+API: OpenWeatherMap API
+
+This project helped me strengthen my React.js skills, particularly in state management, API integration, and responsive design. 🚀
